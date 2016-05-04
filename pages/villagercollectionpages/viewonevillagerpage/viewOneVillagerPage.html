@@ -1,0 +1,44 @@
+<template name="viewOneVillagerPage">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
+
+            {{> villagerInFindList }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 text-left">
+
+                {{#if isOwner }}
+                    <a href="/chefs/{{this._id}}/edit" class="btn btn-block btn-success">
+                        Edit Your Profile
+                    </a>
+                    <a id="deleteVillagerButton" class="btn btn-block btn-danger">
+                        Delete Your Profile
+                    </a>
+                {{/if}}
+            </div>
+        </div>
+            <br>
+
+        <div class="row">
+            <div class="col-md-12 text-left">
+
+            <h4>
+                Home Cooked Meals on Make-Share-Give by Chef {{this.name}}
+            </h4>
+
+            {{#each currentChefMeals this.createdBy}}
+
+                {{>mealInFindList}}
+
+                {{/each}}
+
+
+            </div>
+        </div>
+
+    </div>
+
+</template>

@@ -1,0 +1,60 @@
+
+
+<template name="listTodaysMealsPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
+
+                <h5>
+                    Sort by Price:
+                    <button id="cheapest-first" class="btn btn-link btn-lg text-center">
+                        Least Expensive First
+                    </button>
+
+
+                    <button id="expensive-first" class="btn btn-link btn-lg text-center">
+                        Most Expensive First
+                    </button>
+                    <br>
+                    Sort by Neighborhood:
+
+                    <button id="neighborhood-az" class="btn btn-lg btn-link text-center">
+                        A to Z
+                    </button>
+
+                    <button id="neighborhood-za" class="btn btn-lg btn-link text-center">
+                       Z to A
+                    </button>
+
+                </h5>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h4>
+                    Show All Meals Available for Pickup TODAY on Make-Share-Give
+                </h4>
+
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+
+                <ul class="list-group">
+                    {{#each mealsToday}}
+                        {{>mealInFindList}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+
+

@@ -1,0 +1,74 @@
+<template name="listVillagersPage">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
+
+            {{#if hasResults}}
+                <h5>
+                    Sort by Chef's Name:
+                    <button id="name-az" class="btn btn-link btn-lg text-center">
+                        A-Z
+                    </button>
+
+
+                    <button id="name-za" class="btn btn-link btn-lg text-center">
+                        Z-A
+                    </button>
+                    <br>
+                    Sort by Neighborhood:
+
+                    <button id="neighborhood-az" class="btn btn-lg btn-link text-center">
+                        A to Z
+                    </button>
+
+                    <button id="neighborhood-za" class="btn btn-lg btn-link text-center">
+                        Z to A
+                    </button>
+
+                </h5>
+
+                    <a href="/chefs/create" class="btn btn-lg btn-link text-center">
+                        Add New Profile
+                    </a>
+
+
+
+            {{/if}}
+
+            </div>
+
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12 left-center">
+                <h4> Your Profile(s).  Click Profile to Edit or Delete: </h4>
+                    <ul class="list-group">
+
+                        {{#each loggedInUser}}
+                            {{>villagerInFindList}}
+                            <br>
+                        {{/each}}
+                    </ul>
+
+                <h4> List of Chefs with Meals on Make-Share-Give (Click on Chef for More Info</h4>
+
+                    <ul class="list-group">
+                        {{#each villagerSort}}
+                            <!--{{#unless loggedInUser}}-->
+                                {{>villagerInFindList}}
+                                 <br>
+                            <!--{{/unless}}-->
+                        {{/each}}
+                    </ul>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</template>

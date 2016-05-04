@@ -1,0 +1,55 @@
+<!--
+
+    You will need to change this file, to reflect one meal in
+    the list of meals from the findMeals template. For example.
+    this.name would would display the name of the meal within
+    the list.
+
+-->
+
+
+<template name="buyMeal">
+
+                <!--<h3>Coming Soon - Secure Payments by Stripe</h3>-->
+                <!--<img class="img-responsive center-block" src="https://s3.amazonaws.com/demobucketdoug/development/stripe+with+cards.jpg"/>-->
+                <!--<br>-->
+
+        {{#with chefSelected this.createdBy}}
+
+            <div class="media">
+                <div class="media-left">
+                    <a href="/chefs/{{this._id}}" class="list-group-item">
+                    <img class="media-object" src="{{this.image.url}}" height="235" width="350"/>
+                    </a>
+                </div>
+
+
+            <div class="media-body">
+                <a href="/chefs/{{this._id}}" class="list-group-item">
+                    <br><br><br>
+                <h4 class="media-heading">
+                    Chef: {{this.name}}
+                </h4>
+                <h5>
+                    Cell Phone: {{this.userCell}}<br>
+                    Address:     {{this.street}}
+                    <br><br><br><br>
+                </h5>
+                </a>
+            </div>
+            </div>
+        {{/with}}
+
+
+
+
+</template>
+
+<!--<div class="media">-->
+    <!--<div class="media-left">-->
+        <!--<a href="/meals/{{this._id}}" class="list-group-item">-->
+            <!--<img class="media-object" src="{{this.image.url}}" height="235" width="350"/>-->
+        <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="media-body">-->

@@ -1,0 +1,58 @@
+<!--
+
+    You will need to change this file, to reflect one meal in
+    the list of meals from the findMeals template. For example.
+    this.name would would display the name of the meal within
+    the list.
+
+-->
+
+
+<template name="mealInFindList">
+
+    <div class="media">
+        <div class="media-left">
+            <a href="/meals/{{this._id}}" class="list-group-item">
+                <img class="media-object" src="{{this.image.url}}" height="235" width="350"/>
+            </a>
+        </div>
+
+        <div class="media-body">
+            <a href="/meals/{{this._id}}" class="list-group-item">
+                <h4 class="media-heading">{{this.title}}</h4>
+
+                {{#if isOwner }}
+                    <h5 style="color: red">You are the owner/creator of this meal</h5>
+                {{/if}}
+                {{#unless isOwner}}
+                    <br>
+                {{/unless}}
+
+                <h5>{{this.description}}</h5>
+
+                <h5>Neighborhood: {{this.neighborhood}}</h5>
+                <h5>Cost per Serving: ${{this.costPerServing}}</h5>
+                <h5>Number Servings Available: {{this.numServings}}</h5>
+                    {{#if availableToday}}
+                      <h5> Available today.  Pickup Window: {{this.pickupStartTime}} to {{this.pickupEndTime}}</h5>
+                    {{else}}
+                      <h5 style="color: red"> This meal is NOT available today.</h5>
+                    {{/if}}
+                <!--<img class="img-responsive center-block" src="{{this.image.url}}"/>-->
+            </a>
+        </div>
+    </div>
+
+</template>
+
+<!--<div class="media">-->
+    <!--<div class="media-left">-->
+        <!--<a href="#">-->
+            <!--<img class="media-object" src="..." alt="...">-->
+        <!--</a>-->
+    <!--</div>-->
+    <!--<div class="media-body">-->
+        <!--<h4 class="media-heading">Media heading</h4>-->
+        <!--...-->
+    <!--</div>-->
+<!--</div>-->

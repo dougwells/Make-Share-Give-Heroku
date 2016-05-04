@@ -1,0 +1,64 @@
+<template name="listAllMealsPage">
+
+    <div class="container">
+        {{#if hasResults}}
+
+        <div class="row">
+            <div class="col-md-12 text-left">
+
+                <h5>
+                    Add:
+                    <a href="/meals/create" class="btn btn-link btn-lg">
+                        New Meal
+                    </a>
+                </h5>
+
+                <h5>
+                    Sort:
+                <button id="cheapest-first" class="btn btn-link btn-lg">
+                    Least Expensive First
+                </button>
+
+                <button id="expensive-first" class="btn btn-link btn-lg">
+                    Most Expensive First
+                </button>
+                </h5>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h4>
+                    Show All Meals Currently on Make-Share-Give
+                </h4>
+
+            </div>
+        </div>
+        <br>
+            <div class="row">
+                <div class="col-md-12">
+
+                         {{> findMeals }}
+
+                </div>
+            </div>
+
+            {{else}}
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4>
+                        There are No Meals Currently Listed on Make-Share-Give
+                    </h4>
+
+                </div>
+            </div>
+
+
+        {{/if}}
+        </div>
+
+
+</template>

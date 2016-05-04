@@ -1,0 +1,73 @@
+<template name="listMyMealsPage">
+
+    <div class="container">
+
+        {{#if hasResults}}
+
+        <div class="row">
+             <div class="col-md-12 text-left">
+
+            <h5>
+                Add:
+                <a href="/meals/create" class="btn btn-link btn-lg">
+                    New Meal
+                </a>
+            </h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h4>
+                    All of Your Meals Currently Listed on Make-Share-Give
+                </h4>
+
+            </div>
+        </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    {{#each myMeals}}
+                        {{> mealInFindList }}
+                    {{/each}}
+                </div>
+            </div>
+
+        {{else}}
+
+            <div class="row">
+                <div class="col-md-12 text-left">
+
+                    {{#if currentUser}}
+                        <h4>
+                            You Currently Have No Meals Listed on Make-Share-Give
+                        </h4>
+                        <h5>
+                            Would you like to
+                            <a href="/meals/create" class="btn btn-link btn-lg">
+                                add a new meal?
+                            </a>
+                        </h5>
+
+                    {{else}}
+
+                        <h4> You are not logged in.
+                        <a href="/login" class="btn btn-link btn-lg">
+                            Please log-in or sign-up.
+                        </a>
+                        </h4>
+                    {{/if}}
+
+                </div>
+            </div>
+
+
+
+        {{/if}}
+
+    </div>
+
+
+</template>
+

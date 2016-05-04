@@ -1,0 +1,66 @@
+<!--
+
+    You will need to change this file, to reflect one villager in
+    the list of villagers from the findVillagers template. For example.
+    this.name would would display the name of the villager within
+    the list.
+
+-->
+
+
+<template name="villagerInFindList">
+    <div class="container">
+
+        {{#if isOwner }}
+            <div class="media">
+                <div class="media-left">
+                    <a href="/chefs/{{this._id}}" class="list-group-item">
+                        <img class="media-object" src="{{this.image.url}}" height="235" width="350"/>
+                    </a>
+                </div>
+
+                <div class="media-body">
+                    <a href="/chefs/{{this._id}}" class="list-group-item">
+                        <h4 class="media-heading">{{this.name}}</h4>
+                        <h5 style="color: red"> This is Your Profile</h5>
+                        <h5>About Me: {{this.aboutMe}}</h5>
+                        <h5>Neighborhood: {{this.neighborhood}}</h5>
+                        <a href="/chefs/{{this._id}}" style="color: blue">
+                            Click to Edit or Delete
+                        </a>
+                        <!--<img class="img-responsive center-block" src="{{this.image.url}}"/>-->
+                    </a>
+                </div>
+            </div>
+
+        {{else}}
+
+
+            <div class="media">
+                <div class="media-left">
+                    <a href="/chefs/{{this._id}}" class="list-group-item">
+                        <img class="media-object" src="{{this.image.url}}" height="235" width="350"/>
+                    </a>
+                </div>
+
+                <div class="media-body">
+                    <a href="/chefs/{{this._id}}" class="list-group-item">
+                        <h4 class="media-heading">{{this.name}}</h4>
+                        <h5>About Me: {{this.aboutMe}}</h5>
+                        <h5>Neighborhood: {{this.neighborhood}}</h5>
+                        <!--<img class="img-responsive center-block" src="{{this.image.url}}"/>-->
+                    </a>
+                </div>
+            </div>
+        {{/if}}
+
+    <!--<a href="/villagers/{{this._id}}" class="list-group-item">-->
+        <!--<h4 class="list-group-item-heading">{{this.name}}</h4>-->
+        <!--<p class="list-group-item-text">Description: {{this.aboutMe}}</p>-->
+        <!--<p class="list-group-item-text">Neighborhood: {{this.neighborhood}}</p>-->
+        <!--<img class="img-responsive center-block" src="{{this.image.url}}"/>-->
+    <!--</a>-->
+
+
+        </div>
+</template>

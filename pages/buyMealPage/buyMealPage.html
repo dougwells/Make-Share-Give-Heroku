@@ -1,0 +1,28 @@
+<template name="buyMealPage">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <h4>
+                    Congratulations!  You purchased the meal: "{{this.title}}" <br>
+                    Please contact the chef to arrange to pick up your meal.
+                    Bon Appétit!
+                    <br>
+                </h4>
+
+
+                {{> buyMeal}}
+                {{> mealInFindList }}
+
+                <br>
+
+                <img class="img-responsive center-block" src="https://s3.amazonaws.com/demobucketdoug/development/stripe-secure.png"/>
+
+
+            </div>
+        </div>
+    </div>
+
+</template>
